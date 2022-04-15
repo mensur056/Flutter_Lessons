@@ -1,8 +1,10 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './theme_data.dart';
 
-void main() => runApp(ChangeNotifierProvider<ThemeColorData>(
+void main() => runApp(ChangeNotifierProvider(
     create: (BuildContext context) => ThemeColorData(), child: const MyApp()));
 
 class MyApp extends StatelessWidget {
@@ -28,19 +30,19 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor:
             Provider.of<ThemeColorData>(context).themeColor.primaryColor,
-        title: const Text('Tema Seçimi'),
+        title: const Text('Select Theme'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SwitchListTile(
+            SwitchListTile(inactiveThumbColor: Provider.of<ThemeColorData>(context).themeColor.primaryColor,
               activeColor:
                   Provider.of<ThemeColorData>(context).themeColor.primaryColor,
               title: Provider.of<ThemeColorData>(context).isGreen
-                  ? const Text("Yeşil Tema")
-                  : const Text("Kırmızı Tema"),
+                  ? const Text('Green Theme')
+                  : const Text('Red Theme'),
               onChanged: (_) {
                 Provider.of<ThemeColorData>(context, listen: false)
                     .changeTheme();
@@ -50,13 +52,13 @@ class HomePage extends StatelessWidget {
             ),
             const Card(
               child: ListTile(
-                title: Text("Yapılacaklar"),
+                title: Text("What should I do"),
                 trailing: Icon(Icons.check_box),
               ),
             ),
             const SizedBox(height: 8.0),
             RaisedButton(
-              child: const Text("Ekle"),
+              child: const Text("Add"),
               onPressed: () {},
             ),
           ],

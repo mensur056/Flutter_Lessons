@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
 
 ThemeData green = ThemeData(
-  buttonColor: Colors.green.shade300,
-
-  primaryColor: Colors.green,
-  scaffoldBackgroundColor: Colors.green.shade50,
-);
+    primaryColor: Colors.green,
+    buttonColor: Colors.green.shade300,
+    scaffoldBackgroundColor: Colors.green.shade100);
 ThemeData red = ThemeData(
-  buttonColor: Colors.red.shade300,
-
-
-  primaryColor: Colors.red,
-  scaffoldBackgroundColor: Colors.red.shade50,
-);
+    primaryColor: Colors.red,
+    buttonColor: Colors.red.shade300,
+    scaffoldBackgroundColor: Colors.red.shade100);
 
 class ThemeColorData with ChangeNotifier {
   bool _isGreen = true;

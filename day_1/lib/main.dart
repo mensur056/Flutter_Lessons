@@ -26,6 +26,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
+        backgroundColor:
+            Provider.of<ThemeColorData>(context).themeColor.primaryColor,
         title: const Text('Tema Seçimi'),
       ),
       body: Padding(
@@ -33,10 +35,18 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            const SwitchListTile(
-              title: Text("Yeşil Tema"),
-              onChanged: null,
-              value: false,
+            SwitchListTile(
+              activeColor:
+                  Provider.of<ThemeColorData>(context).themeColor.primaryColor,
+              title: Provider.of<ThemeColorData>(context).isGreen
+                  ? const Text("Yeşil Tema")
+                  : const Text("Kırmızı Tema"),
+              onChanged: (_) {
+                Provider.of<ThemeColorData>(context, listen: false)
+                    .changeTheme();
+              },
+              value:
+                  Provider.of<ThemeColorData>(context, listen: false).isGreen,
             ),
             const Card(
               child: ListTile(

@@ -14,7 +14,7 @@ ThemeData red = ThemeData(
 class ThemeColorData with ChangeNotifier {
   SharedPreferences? _sharedPref;
 
-  void createSharedPref() async {
+  Future<void> createSharedPref() async {
     _sharedPref = await SharedPreferences.getInstance();
   }
 
@@ -28,6 +28,16 @@ class ThemeColorData with ChangeNotifier {
 
   void changeThemeColor() {
     _isBlue = !_isBlue;
+    saveToSharedPref(_isBlue);
     notifyListeners();
+  }
+
+  void saveToSharedPref(bool value) {
+    _sharedPref!.setBool('themeData', value);
+  }
+
+  void loadThemeFromSharedPref() async {
+    await createSharedPref();
+    _isBlue = _sharedPref!.getBool('themeData') ?? true;
   }
 }

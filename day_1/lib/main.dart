@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './theme_data.dart';
@@ -37,19 +35,22 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SwitchListTile(inactiveThumbColor: Provider.of<ThemeColorData>(context).themeColor.primaryColor,
-              activeColor:
-                  Provider.of<ThemeColorData>(context).themeColor.primaryColor,
-              title: Provider.of<ThemeColorData>(context).isGreen
-                  ? const Text('Green Theme')
-                  : const Text('Red Theme'),
-              onChanged: (_) {
-                Provider.of<ThemeColorData>(context, listen: false)
-                    .changeTheme();
-              },
-              value:
-                  Provider.of<ThemeColorData>(context, listen: false).isGreen,
-            ),
+            SwitchListTile(
+                activeColor: Provider.of<ThemeColorData>(context)
+                    .themeColor
+                    .primaryColor,
+                inactiveThumbColor: Provider.of<ThemeColorData>(context)
+                    .themeColor
+                    .primaryColor,
+                title: Provider.of<ThemeColorData>(context).isBlue
+                    ? const Text('Blue Theme')
+                    : const Text('Red Theme'),
+                onChanged: (_) {
+                  Provider.of<ThemeColorData>(context, listen: false)
+                      .changeThemeColor();
+                },
+                value:
+                    Provider.of<ThemeColorData>(context, listen: false).isBlue),
             const Card(
               child: ListTile(
                 title: Text("What should I do"),

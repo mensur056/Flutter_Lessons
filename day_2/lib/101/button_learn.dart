@@ -19,7 +19,20 @@ class ButtonLearn extends StatelessWidget {
               'h',
               style: TextStyle(color: Colors.red),
             ),
-          )
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text(
+              'h',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+          ElevatedButton(
+              onPressed: () {},
+              child: Text(
+                'Place Bid',
+                style: Theme.of(context).textTheme.headline6,
+              )),
         ],
       ),
     );

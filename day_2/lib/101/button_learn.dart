@@ -7,9 +7,20 @@ class ButtonLearn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: TextButton(
-        onPressed: () {},
-        child: const Text('hello'),
+      body: Column(
+        children: [
+          TextButton(
+            onPressed: () {},
+            child: const Text('hello'),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text(
+              'h',
+              style: TextStyle(color: Colors.red),
+            ),
+          )
+        ],
       ),
     );
   }

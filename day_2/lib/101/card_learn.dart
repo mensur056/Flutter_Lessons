@@ -10,6 +10,7 @@ class CardLearn extends StatelessWidget {
       body: Column(
         children: [
           Card(
+            shadowColor: Colors.blue,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             color: Theme.of(context).colorScheme.error,
@@ -20,7 +21,7 @@ class CardLearn extends StatelessWidget {
           ),
           Card(
             color: Theme.of(context).colorScheme.primary,
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
             child: const SizedBox(
               height: 100,
               width: 300,

@@ -50,12 +50,17 @@ class KnowledgeApp extends StatelessWidget {
               ),
             ),
             TextButton(
-                onPressed: () {},
+              onPressed: () {},
+              child: Padding(
+                padding: PaddingEverywhere().verticalPadding,
                 child: Text(
                   importNote,
                   style: Theme.of(context).textTheme.headline6?.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.w400),
-                ))
+                      color: Colors.lightBlueAccent,
+                      fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -66,9 +71,7 @@ class KnowledgeApp extends StatelessWidget {
 class PaddingEverywhere {
   final EdgeInsets horizontalPadding =
       const EdgeInsets.symmetric(horizontal: 20);
-  final EdgeInsets verticalPadding = const EdgeInsets.only(top: 10);
-  final EdgeInsets buttonPaddingWH =
-      const EdgeInsets.symmetric(horizontal: 50, vertical: 25);
+  final EdgeInsets verticalPadding = const EdgeInsets.only(top: 15, bottom: 15);
 }
 
 class ImageItems {

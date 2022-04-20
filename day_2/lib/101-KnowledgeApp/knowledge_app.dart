@@ -22,12 +22,16 @@ class KnowledgeApp extends StatelessWidget {
                   .headline5
                   ?.copyWith(color: Colors.black, fontWeight: FontWeight.w600),
             ),
-            Text(
-              data * 6,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: Colors.grey),
+            Padding(
+              padding: PaddingVertical().verticalPadding,
+              child: Text(
+                data * 6,
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .subtitle1
+                    ?.copyWith(color: Colors.grey),
+              ),
             )
           ],
         ),
@@ -39,6 +43,10 @@ class KnowledgeApp extends StatelessWidget {
 class PaddingHorizontal {
   final EdgeInsets horizontalPadding =
       const EdgeInsets.symmetric(horizontal: 20);
+}
+
+class PaddingVertical {
+  final EdgeInsets verticalPadding = const EdgeInsets.only(top: 20);
 }
 
 class ImageItems {

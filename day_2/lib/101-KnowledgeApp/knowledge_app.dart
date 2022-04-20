@@ -5,6 +5,7 @@ class KnowledgeApp extends StatelessWidget {
   final String data = 'Create your first note';
   final String data1 = 'Create your first note';
   final String buttonText = 'Create a note';
+  final String importNote = 'Import note';
 
   @override
   Widget build(BuildContext context) {
@@ -37,15 +38,24 @@ class KnowledgeApp extends StatelessWidget {
             const Spacer(),
             ElevatedButton(
               onPressed: () {},
-              child: Padding(
-                padding: PaddingEverywhere().buttonPaddingWH,
-                child: Text(
-                  buttonText,
-                  style: Theme.of(context).textTheme.headline6?.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+              child: SizedBox(
+                height: 70,
+                child: Center(
+                  child: Text(
+                    buttonText,
+                    style: Theme.of(context).textTheme.headline6?.copyWith(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ),
-            )
+            ),
+            TextButton(
+                onPressed: () {},
+                child: Text(
+                  importNote,
+                  style: Theme.of(context).textTheme.headline6?.copyWith(
+                      color: Colors.black, fontWeight: FontWeight.w400),
+                ))
           ],
         ),
       ),
@@ -58,7 +68,7 @@ class PaddingEverywhere {
       const EdgeInsets.symmetric(horizontal: 20);
   final EdgeInsets verticalPadding = const EdgeInsets.only(top: 10);
   final EdgeInsets buttonPaddingWH =
-      const EdgeInsets.symmetric(horizontal: 50, vertical:25);
+      const EdgeInsets.symmetric(horizontal: 50, vertical: 25);
 }
 
 class ImageItems {

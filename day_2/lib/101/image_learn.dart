@@ -8,7 +8,15 @@ class ImageLearn extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Column(
-        children: [],
+        children: [
+          SizedBox(
+            height: 300,
+            width: 400,
+            child: Image.asset(
+              'assets/images/im_insta.png',
+            ),
+          )
+        ],
       ),
     );
   }

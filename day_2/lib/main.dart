@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               color: Colors.transparent,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
-      home:  ImageLearn(),
+      home:  const ImageLearn(),
     );
   }
 }

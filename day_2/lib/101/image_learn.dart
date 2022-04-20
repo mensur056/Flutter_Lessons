@@ -13,11 +13,15 @@ class ImageLearn extends StatelessWidget {
             height: 300,
             width: 400,
             child: Image.asset(
-              'assets/images/im_insta.png',
+              ImageItems().imageName,
             ),
           )
         ],
       ),
     );
   }
+}
+
+class ImageItems {
+  final String imageName = 'assets/images/im_insta.png';
 }

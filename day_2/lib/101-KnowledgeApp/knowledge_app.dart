@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class KnowledgeApp extends StatelessWidget {
   const KnowledgeApp({Key? key}) : super(key: key);
   final String data = 'Create your first note';
+  final String data1 = 'Create your first note';
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,13 @@ class KnowledgeApp extends StatelessWidget {
                   .headline5
                   ?.copyWith(color: Colors.black, fontWeight: FontWeight.w600),
             ),
+            Text(
+              data * 6,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline6
+                  ?.copyWith(color: Colors.grey),
+            )
           ],
         ),
       ),

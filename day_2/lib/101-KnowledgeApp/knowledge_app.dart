@@ -12,7 +12,16 @@ class KnowledgeApp extends StatelessWidget {
       body: Padding(
         padding: PaddingHorizontal().horizontalPadding,
         child: Column(
-          children: [ImageItems().imageName, Text(data)],
+          children: [
+            ImageItems().imageName,
+            Text(
+              data,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline5
+                  ?.copyWith(color: Colors.black, fontWeight: FontWeight.w600),
+            ),
+          ],
         ),
       ),
     );

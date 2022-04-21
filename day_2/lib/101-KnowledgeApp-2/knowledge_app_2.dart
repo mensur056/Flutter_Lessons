@@ -13,9 +13,7 @@ class KnowledgeApp2 extends StatelessWidget {
             flex: 4,
             child: Stack(
               children: [
-                Positioned.fill(
-                    child: Image.network(
-                        'https://static.scientificamerican.com/sciam/cache/file/4F73FD83-3377-42FC-915AD56BD66159FE_source.jpg'))
+                Positioned.fill(child: Image.network(ImageName().imageName))
               ],
             ),
           ),
@@ -26,4 +24,9 @@ class KnowledgeApp2 extends StatelessWidget {
       ),
     );
   }
+}
+
+class ImageName {
+  final String imageName =
+      'https://static.scientificamerican.com/sciam/cache/file/4F73FD83-3377-42FC-915AD56BD66159FE_source.jpg';
 }

@@ -11,14 +11,18 @@ class CustomWidgetLearn extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
             primary: ColorsUtility().redColor,
           ),
           onPressed: () {},
-          child: Text(
-            title,
-            style: Theme.of(context).textTheme.headline6?.copyWith(
-                color: ColorsUtility().whiteColor, fontWeight: FontWeight.bold),
+          child: Padding(
+            padding: PaddingUtility().padding,
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                  color: ColorsUtility().whiteColor,
+                  fontWeight: FontWeight.bold),
+            ),
           ),
         ),
       ),
@@ -29,4 +33,9 @@ class CustomWidgetLearn extends StatelessWidget {
 class ColorsUtility {
   final Color redColor = Colors.red;
   final Color whiteColor = Colors.white;
+}
+
+class PaddingUtility {
+  final EdgeInsets padding = const EdgeInsets.all(16);
+  final EdgeInsets padding2x = const EdgeInsets.all(32);
 }

@@ -1,3 +1,4 @@
+import 'package:day_2/101-KnowledgeApp-2/knowledge_app_2.dart';
 import 'package:day_2/101-KnowledgeApp/knowledge_app.dart';
 import 'package:day_2/101/app_bar_learn.dart';
 import 'package:day_2/101/button_learn.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               color: Colors.transparent,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
-      home: const StackLearn(),
+      home: const KnowledgeApp2(),
     );
   }
 }

@@ -21,8 +21,16 @@ class CenterCircularProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: CircularProgressIndicator(),
+    return Center(
+      child: CircularProgressIndicator(
+        backgroundColor: ColorsCircularProgress().progressBackgroundColor,
+        color: ColorsCircularProgress().progressPrimaryColor,
+      ),
     );
   }
+}
+
+class ColorsCircularProgress {
+  final Color progressBackgroundColor = Colors.white;
+  final Color progressPrimaryColor = Colors.green;
 }

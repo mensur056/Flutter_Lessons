@@ -5,6 +5,7 @@ import 'package:day_2/101/card_learn.dart';
 import 'package:day_2/101/custom_widget_learn.dart';
 import 'package:day_2/101/icon_learn.dart';
 import 'package:day_2/101/indicator_learn.dart';
+import 'package:day_2/101/list_tile%20_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
               elevation: 0,
               color: Colors.transparent,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
-      home: const IndicatorLearn(),
+      home: const ListTileLearn(),
     );
   }
 }

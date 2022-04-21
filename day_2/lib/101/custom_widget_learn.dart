@@ -11,14 +11,20 @@ class CustomWidgetLearn extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            CustomButton(title: title),
+            CustomButton(
+              title: title,
+              onPressed: () {},
+            ),
             const SizedBox(
-              height: 26,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: SizedBox(
-                child: CustomButton(title: title),
+                child: CustomButton(
+                  title: title,
+                  onPressed: () {},
+                ),
                 width: MediaQuery.of(context).size.width,
               ),
             ),
@@ -33,9 +39,11 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     Key? key,
     required this.title,
+    required this.onPressed,
   }) : super(key: key);
 
   final String title;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +52,7 @@ class CustomButton extends StatelessWidget {
         shape: const StadiumBorder(),
         primary: ColorsUtility().redColor,
       ),
-      onPressed: () {},
+      onPressed: onPressed,
       child: Padding(
         padding: PaddingUtility().padding,
         child: Text(

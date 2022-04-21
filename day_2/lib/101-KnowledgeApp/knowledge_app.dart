@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class KnowledgeApp extends StatelessWidget {
   const KnowledgeApp({Key? key}) : super(key: key);
@@ -11,7 +12,9 @@ class KnowledgeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blueGrey[50],
-      appBar: AppBar(),
+      appBar: AppBar(
+        systemOverlayStyle: SystemUiOverlayStyle.dark,
+      ),
       body: Padding(
         padding: PaddingEverywhere().horizontalPadding,
         child: Column(

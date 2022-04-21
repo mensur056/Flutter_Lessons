@@ -9,17 +9,20 @@ class ListTileLearn extends StatelessWidget {
       appBar: AppBar(),
       body: Column(
         children: [
-          ListTile(
-            onTap: () {},
-            leading:  Icon(
-              Icons.favorite,
-              color: Theme.of(context).errorColor,
-            ),
-            title: const Text('My favorite song'),
-            subtitle: const Text('What do you want to listen'),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.arrow_right),
+          Card(
+            shape: const StadiumBorder(),
+            child: ListTile(
+              onTap: () {},
+              leading: Icon(
+                Icons.favorite,
+                color: Theme.of(context).errorColor,
+              ),
+              title: const Text('My favorite song'),
+              subtitle: const Text('What do you want to listen'),
+              trailing: IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.arrow_right),
+              ),
             ),
           ),
         ],

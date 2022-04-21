@@ -50,27 +50,27 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         shape: const StadiumBorder(),
-        primary: ColorsUtility().redColor,
+        primary: _ColorsUtility().redColor,
       ),
       onPressed: onPressed,
       child: Padding(
-        padding: PaddingUtility().padding,
+        padding: _PaddingUtility().padding,
         child: Text(
           title,
           style: Theme.of(context).textTheme.subtitle1?.copyWith(
-              color: ColorsUtility().whiteColor, fontWeight: FontWeight.bold),
+              color: _ColorsUtility().whiteColor, fontWeight: FontWeight.bold),
         ),
       ),
     );
   }
 }
 
-class ColorsUtility {
+class _ColorsUtility {
   final Color redColor = Colors.red;
   final Color whiteColor = Colors.white;
 }
 
-class PaddingUtility {
+class _PaddingUtility {
   final EdgeInsets padding = const EdgeInsets.all(16);
   final EdgeInsets padding2x = const EdgeInsets.all(32);
 }

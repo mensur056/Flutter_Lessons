@@ -13,7 +13,7 @@ class ImageLearn extends StatelessWidget {
             height: 100,
             width: 400,
             child: Image.asset(
-              ImageItems().imageName,
+              _ImageItems().imageName,
             ),
           ),
           Image.network(
@@ -24,6 +24,6 @@ class ImageLearn extends StatelessWidget {
   }
 }
 
-class ImageItems {
+class _ImageItems {
   final String imageName = 'assets/images/im_insta.png';
 }

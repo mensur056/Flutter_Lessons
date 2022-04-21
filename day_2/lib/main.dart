@@ -4,6 +4,7 @@ import 'package:day_2/101/button_learn.dart';
 import 'package:day_2/101/card_learn.dart';
 import 'package:day_2/101/custom_widget_learn.dart';
 import 'package:day_2/101/icon_learn.dart';
+import 'package:day_2/101/indicator_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,11 +23,13 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Learning',
       theme: ThemeData.dark().copyWith(
+          progressIndicatorTheme:
+              const ProgressIndicatorThemeData(color: Colors.white),
           appBarTheme: const AppBarTheme(
               elevation: 0,
               color: Colors.transparent,
               systemOverlayStyle: SystemUiOverlayStyle.light)),
-      home: const CustomWidgetLearn(),
+      home: const IndicatorLearn(),
     );
   }
 }

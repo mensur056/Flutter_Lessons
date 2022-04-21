@@ -11,15 +11,14 @@ class CustomWidgetLearn extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
+            shape: StadiumBorder(),
             primary: ColorsUtility().redColor,
           ),
           onPressed: () {},
           child: Text(
             title,
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                ?.copyWith(color: ColorsUtility().whiteColor),
+            style: Theme.of(context).textTheme.headline6?.copyWith(
+                color: ColorsUtility().whiteColor, fontWeight: FontWeight.bold),
           ),
         ),
       ),

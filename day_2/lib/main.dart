@@ -8,6 +8,7 @@ import 'package:day_2/101/custom_widget_learn.dart';
 import 'package:day_2/101/icon_learn.dart';
 import 'package:day_2/101/indicator_learn.dart';
 import 'package:day_2/101/list_tile%20_learn.dart';
+import 'package:day_2/101/page_view.dart';
 import 'package:day_2/101/stack_learn.dart';
 import 'package:day_2/101/stateful_widget_learn.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
           progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
           appBarTheme: const AppBarTheme(
               elevation: 0, color: Colors.transparent, systemOverlayStyle: SystemUiOverlayStyle.light)),
-      home: const StateFulWidgetLearn(),
+      home: const PageViewLearn(),
     );
   }
 }

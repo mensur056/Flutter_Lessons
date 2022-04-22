@@ -8,18 +8,15 @@ class StateFulWidgetLearn extends StatefulWidget {
 }
 
 class _StateFulWidgetLearnState extends State<StateFulWidgetLearn> {
-  int counter = 0;
+  int _counter = 0;
 
-  void incrementValue() {
-    setState(() {
-      counter++;
-    });
-  }
-
-  void deincrementValue() {
-    setState(() {
-      counter--;
-    });
+  void _chageValue(bool value) {
+    if (value) {
+      _counter++;
+    } else {
+      _counter--;
+    }
+    setState(() {});
   }
 
   @override
@@ -27,7 +24,10 @@ class _StateFulWidgetLearnState extends State<StateFulWidgetLearn> {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Text(counter.toString()),
+        child: Text(
+          _counter.toString(),
+          style: const TextStyle(fontSize: 20),
+        ),
       ),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
@@ -36,14 +36,14 @@ class _StateFulWidgetLearnState extends State<StateFulWidgetLearn> {
             padding: const EdgeInsets.only(right: 10.0),
             child: FloatingActionButton(
               onPressed: () {
-                deincrementValue();
+                _chageValue(false);
               },
               child: const Icon(Icons.remove),
             ),
           ),
           FloatingActionButton(
             onPressed: () {
-              incrementValue();
+              _chageValue(true);
             },
             child: const Icon(Icons.add),
           )

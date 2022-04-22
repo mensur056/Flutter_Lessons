@@ -12,8 +12,22 @@ class KnowledgeApp2 extends StatelessWidget {
           Expanded(
             flex: 4,
             child: Stack(
+              alignment: Alignment.center,
               children: [
-                Positioned.fill(child: Image.network(ImageName().imageName))
+                Positioned.fill(
+                  bottom: 25,
+                  child: Image.network(
+                    ImageName().imageName,
+                  ),
+                ),
+                const Positioned(
+                  width: 200,
+                  bottom: 0,
+                  height: 50,
+                  child: Card(
+                    color: Colors.green,
+                  ),
+                )
               ],
             ),
           ),

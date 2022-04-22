@@ -1,3 +1,4 @@
+import 'package:day_2/product/elevated_button.dart';
 import 'package:flutter/material.dart';
 
 class StateFulWidgetLearn extends StatefulWidget {
@@ -10,7 +11,7 @@ class StateFulWidgetLearn extends StatefulWidget {
 class _StateFulWidgetLearnState extends State<StateFulWidgetLearn> {
   int _counter = 0;
 
-  void _chageValue(bool value) {
+  void _changeValue(bool value) {
     if (value) {
       _counter++;
     } else {
@@ -24,9 +25,14 @@ class _StateFulWidgetLearnState extends State<StateFulWidgetLearn> {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: Text(
-          _counter.toString(),
-          style: const TextStyle(fontSize: 20),
+        child: Column(
+          children: [
+            Text(
+              _counter.toString(),
+              style: const TextStyle(fontSize: 20),
+            ),
+            const ElevatedButtonText()
+          ],
         ),
       ),
       floatingActionButton: Row(
@@ -36,14 +42,15 @@ class _StateFulWidgetLearnState extends State<StateFulWidgetLearn> {
             padding: const EdgeInsets.only(right: 10.0),
             child: FloatingActionButton(
               onPressed: () {
-                _chageValue(false);
+                _changeValue(false);
               },
               child: const Icon(Icons.remove),
             ),
           ),
           FloatingActionButton(
             onPressed: () {
-              _chageValue(true);
+              print('burda');
+              _changeValue(true);
             },
             child: const Icon(Icons.add),
           )

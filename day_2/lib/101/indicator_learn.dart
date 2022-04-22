@@ -9,9 +9,7 @@ class IndicatorLearn extends StatelessWidget {
       appBar: AppBar(
         actions: const [CenterCircularProgress()],
       ),
-      body: Column(
-        children: [],
-      ),
+
     );
   }
 }

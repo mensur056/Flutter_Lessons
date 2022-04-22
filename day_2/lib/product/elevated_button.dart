@@ -9,7 +9,7 @@ class ElevatedButtonText extends StatefulWidget {
 
 class _ElevatedButtonTextState extends State<ElevatedButtonText> {
   int _counterButton = 0;
-  String _welcomeText = 'Hello';
+  final String _welcomeText = 'Hello';
 
   void changeNumber() {
     setState(() {

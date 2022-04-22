@@ -14,27 +14,43 @@ class PageViewLearn extends StatefulWidget {
 
 class _PageViewLearnState extends State<PageViewLearn> {
   final _pageController = PageController();
+  int _currentPageIndex = 0;
+
+  void _updatePageIndex(int index) {
+    setState(() {
+      _currentPageIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: PageView(
+        onPageChanged: _updatePageIndex,
         controller: _pageController,
         children: const [ButtonLearn(), KnowledgeApp(), KnowledgeApp2()],
       ),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 30.0),
+            child: Text(
+              _currentPageIndex.toString(),
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+          Spacer(),
           FloatingActionButton(
             onPressed: () {
-              _pageController.previousPage(duration: _duration.DurationLow, curve: Curves.easeInOutCubicEmphasized);
+              _pageController.previousPage(duration: _durationTime.durationLow, curve: Curves.easeInOutCubicEmphasized);
             },
             child: const Icon(Icons.chevron_left),
           ),
           FloatingActionButton(
             onPressed: () {
-              _pageController.nextPage(duration: _duration.DurationLow, curve: Curves.easeOutSine);
+              _pageController.nextPage(duration: _durationTime.durationLow, curve: Curves.easeOutSine);
             },
             child: const Icon(Icons.chevron_right),
           ),
@@ -44,6 +60,6 @@ class _PageViewLearnState extends State<PageViewLearn> {
   }
 }
 
-class _duration {
-  static const DurationLow = Duration(seconds: 1);
+class _durationTime {
+  static const durationLow = Duration(seconds: 1);
 }

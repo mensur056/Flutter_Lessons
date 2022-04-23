@@ -1,3 +1,4 @@
+import 'package:day_2/101-Color_Demo_View/101_color.demo_view.dart';
 import 'package:day_2/101-KnowledgeApp-2/knowledge_app_2.dart';
 import 'package:day_2/101-KnowledgeApp/knowledge_app.dart';
 import 'package:day_2/101/app_bar_learn.dart';
@@ -32,6 +33,6 @@ class MyApp extends StatelessWidget {
             progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
             appBarTheme: const AppBarTheme(
                 elevation: 0, color: Colors.transparent, systemOverlayStyle: SystemUiOverlayStyle.light)),
-        home: const TextFieldLearn());
+        home: const ColorDemoView());
   }
 }

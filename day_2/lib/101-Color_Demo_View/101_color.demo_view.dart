@@ -34,7 +34,7 @@ class _ColorDemoViewState extends State<ColorDemoView> {
                 height: 20,
                 width: 20,
               ),
-              label: 'blue')
+              label: 'black')
         ],
       ),
     );

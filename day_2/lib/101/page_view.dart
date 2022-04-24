@@ -1,5 +1,5 @@
-import 'package:day_2/101-KnowledgeApp-2/knowledge_app_2.dart';
-import 'package:day_2/101-KnowledgeApp/knowledge_app.dart';
+import 'package:day_2/101/101-KnowledgeApp-2/knowledge_app_2.dart';
+import 'package:day_2/101/101-KnowledgeApp/knowledge_app.dart';
 import 'package:day_2/101/button_learn.dart';
 import 'package:day_2/101/icon_learn.dart';
 import 'package:day_2/101/indicator_learn.dart';

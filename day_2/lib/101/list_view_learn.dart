@@ -8,6 +8,7 @@ class ListViewLearn extends StatefulWidget {
 }
 
 class _ListViewLearnState extends State<ListViewLearn> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class _ListViewLearnState extends State<ListViewLearn> {
             height: 300,
             color: Theme.of(context).colorScheme.error,
           ),
-          Container(
+          SizedBox(
             height: 300,
             child: ListView(
               scrollDirection: Axis.horizontal,

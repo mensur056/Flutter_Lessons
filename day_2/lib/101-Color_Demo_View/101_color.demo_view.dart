@@ -15,7 +15,7 @@ class _ColorDemoViewState extends State<ColorDemoView> {
   @override
   void didUpdateWidget(covariant ColorDemoView oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.initialColor != widget.initialColor && widget.initialColor != null) {
+    if (widget.initialColor != _backgroundColor &&widget.initialColor!= null) {
       changeBackgroundColor(widget.initialColor!);
     }
   }

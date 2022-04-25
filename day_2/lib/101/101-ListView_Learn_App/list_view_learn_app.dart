@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ListViewLearnApp extends StatefulWidget {
@@ -16,9 +15,9 @@ class _ListViewLearnAppState extends State<ListViewLearnApp> {
     super.initState();
     _items = [
       CollectionModel(imagePath: 'assets/images/im_test.jpg', title: 'Abstract Art1', price: 8.5),
-      CollectionModel(imagePath: 'assets/images/im_test.jpg', title: 'Abstract Art2', price: 8.5),
-      CollectionModel(imagePath: 'assets/images/im_test.jpg', title: 'Abstract Art3', price: 8.5),
-      CollectionModel(imagePath: 'assets/images/im_test.jpg', title: 'Abstract Art4', price: 8.5)
+      CollectionModel(imagePath: 'assets/images/im_test.jpg', title: 'Abstract Art2', price: 7.5),
+      CollectionModel(imagePath: 'assets/images/im_test.jpg', title: 'Abstract Art3', price: 9.5),
+      CollectionModel(imagePath: 'assets/images/im_test.jpg', title: 'Abstract Art4', price: 3.8)
     ];
   }
 
@@ -28,16 +27,23 @@ class _ListViewLearnAppState extends State<ListViewLearnApp> {
         appBar: AppBar(),
         body: ListView.builder(
           itemBuilder: (context, index) {
-            return Card(
-              child: SizedBox(
-                height: 300,
-                child: Column(
-                  children: [
-                    Image.asset(_items[index].imagePath),
-                    Row(
-                      children: [Text(_items[index].title), const Text('{_items[index].price}')],
-                    )
-                  ],
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Card(
+                child: SizedBox(
+                  height: 300,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                        child: Image.asset(_items[index].imagePath),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [Text(_items[index].title), Text('${_items[index].price}')],
+                      )
+                    ],
+                  ),
                 ),
               ),
             );

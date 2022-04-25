@@ -38,10 +38,10 @@ class _PageViewLearnState extends State<PageViewLearn> {
             padding: const EdgeInsets.only(left: 30.0),
             child: Text(
               _currentPageIndex.toString(),
-              style: TextStyle(color: Colors.red),
+              style: const TextStyle(color: Colors.red),
             ),
           ),
-          Spacer(),
+          const Spacer(),
           FloatingActionButton(
             onPressed: () {
               _pageController.previousPage(duration: _durationTime.durationLow, curve: Curves.easeInOutCubicEmphasized);

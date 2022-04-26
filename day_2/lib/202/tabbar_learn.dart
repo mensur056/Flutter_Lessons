@@ -7,7 +7,15 @@ class TabBarLearn extends StatefulWidget {
   State<TabBarLearn> createState() => _TabBarLearnState();
 }
 
-class _TabBarLearnState extends State<TabBarLearn> {
+class _TabBarLearnState extends State<TabBarLearn> with TickerProviderStateMixin {
+  late final TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -15,14 +23,19 @@ class _TabBarLearnState extends State<TabBarLearn> {
       child: Scaffold(
         extendBody: true,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            _tabController.animateTo(1);
+          },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        bottomNavigationBar: const BottomAppBar(
-          notchMargin: 10,
-          shape: CircularNotchedRectangle(),
+        bottomNavigationBar: BottomAppBar(
+          elevation: 0,
+          color: Colors.red,
+          notchMargin: 20,
+          shape: const CircularNotchedRectangle(),
           child: TabBar(
-            tabs: [
+            controller: _tabController,
+            tabs: const [
               Tab(
                 text: 'Page1',
               ),
@@ -32,19 +45,9 @@ class _TabBarLearnState extends State<TabBarLearn> {
             ],
           ),
         ),
-        appBar: AppBar(
-          bottom: const TabBar(
-            tabs: [
-              Tab(
-                text: 'Page1',
-              ),
-              Tab(
-                text: 'Page2',
-              )
-            ],
-          ),
-        ),
+        appBar: AppBar(),
         body: TabBarView(
+          controller: _tabController,
           children: [
             Container(
               color: Colors.green,

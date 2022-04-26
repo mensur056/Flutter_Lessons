@@ -13,13 +13,13 @@ class _TabBarLearnState extends State<TabBarLearn> with TickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
+    _tabController = TabController(length: _MyTabView.values.length, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 2,
+      length: _MyTabView.values.length,
       child: Scaffold(
         extendBody: true,
         floatingActionButton: FloatingActionButton(
@@ -30,20 +30,17 @@ class _TabBarLearnState extends State<TabBarLearn> with TickerProviderStateMixin
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         bottomNavigationBar: BottomAppBar(
           elevation: 0,
-          color: Colors.red,
-          notchMargin: 20,
+          notchMargin: 10,
           shape: const CircularNotchedRectangle(),
           child: TabBar(
-            controller: _tabController,
-            tabs: const [
-              Tab(
-                text: 'Page1',
-              ),
-              Tab(
-                text: 'Page2',
-              )
-            ],
-          ),
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.green,
+              controller: _tabController,
+              tabs: _MyTabView.values
+                  .map((e) => Tab(
+                        text: e.name,
+                      ))
+                  .toList()),
         ),
         appBar: AppBar(),
         body: TabBarView(
@@ -54,6 +51,12 @@ class _TabBarLearnState extends State<TabBarLearn> with TickerProviderStateMixin
             ),
             Container(
               color: Colors.blue,
+            ),
+            Container(
+              color: Colors.orange,
+            ),
+            Container(
+              color: Colors.yellow,
             )
           ],
         ),
@@ -61,3 +64,5 @@ class _TabBarLearnState extends State<TabBarLearn> with TickerProviderStateMixin
     );
   }
 }
+
+enum _MyTabView { home, favorite, subscribe, setting }

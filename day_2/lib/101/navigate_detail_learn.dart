@@ -14,7 +14,9 @@ class _NavigateDetailLearnState extends State<NavigateDetailLearn> {
       appBar: AppBar(),
       body: Center(
         child: ElevatedButton.icon(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pop(true);
+          },
           icon: const Icon(Icons.check),
           label: const Text('Onayla'),
         ),

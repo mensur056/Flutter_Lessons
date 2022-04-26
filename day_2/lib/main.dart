@@ -18,6 +18,7 @@ import 'package:day_2/101/stack_learn.dart';
 import 'package:day_2/101/stateful_life_cycle.dart';
 import 'package:day_2/101/stateful_widget_learn.dart';
 import 'package:day_2/101/text_field_learn.dart';
+import 'package:day_2/202/tabbar_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -37,6 +38,6 @@ class MyApp extends StatelessWidget {
             progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
             appBarTheme: const AppBarTheme(
                 elevation: 0, color: Colors.transparent, systemOverlayStyle: SystemUiOverlayStyle.light)),
-        home: const NavigationLearn());
+        home: const TabBarLearn());
   }
 }

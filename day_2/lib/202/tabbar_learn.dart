@@ -13,6 +13,37 @@ class _TabBarLearnState extends State<TabBarLearn> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        extendBody: true,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: const BottomAppBar(
+          notchMargin: 10,
+          shape: CircularNotchedRectangle(),
+          child: TabBar(
+            tabs: [
+              Tab(
+                text: 'Page1',
+              ),
+              Tab(
+                text: 'Page2',
+              )
+            ],
+          ),
+        ),
+        appBar: AppBar(
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                text: 'Page1',
+              ),
+              Tab(
+                text: 'Page2',
+              )
+            ],
+          ),
+        ),
         body: TabBarView(
           children: [
             Container(

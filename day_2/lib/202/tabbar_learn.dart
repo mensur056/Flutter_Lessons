@@ -24,7 +24,7 @@ class _TabBarLearnState extends State<TabBarLearn> with TickerProviderStateMixin
         extendBody: true,
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            _tabController.animateTo(1);
+            _tabController.animateTo(0);
           },
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

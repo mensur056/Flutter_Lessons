@@ -23,6 +23,8 @@ import 'package:day_2/202/tabbar_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '202/service/service_learn.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -39,6 +41,6 @@ class MyApp extends StatelessWidget {
             progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
             appBarTheme: const AppBarTheme(
                 elevation: 0, color: Colors.transparent, systemOverlayStyle: SystemUiOverlayStyle.light)),
-        home: const ModelViewLearn());
+        home: const ServiceLearn());
   }
 }

@@ -14,11 +14,14 @@ class ServiceLearn extends StatefulWidget {
 class _ServiceLearnState extends State<ServiceLearn> {
   List<PostModel>? _items;
   bool _isLoading = false;
+  late final Dio _dio;
+  final _baseUrl = 'https://jsonplaceholder.typicode.com/';
 
   @override
   void initState() {
     super.initState();
     fetchPostModel();
+    _dio = Dio(BaseOptions(baseUrl: _baseUrl));
   }
 
   void changeLoading() {
@@ -27,9 +30,9 @@ class _ServiceLearnState extends State<ServiceLearn> {
     });
   }
 
-  Future<void> fetchPostModel() async {
+  Future<void> fetchPostModelAdvance() async {
     changeLoading();
-    final response = await Dio().get('https://jsonplaceholder.typicode.com/posts');
+    final response = await _dio.get('posts');
     if (response.statusCode == HttpStatus.ok) {
       final _datas = response.data;
       if (_datas is List) {
@@ -39,8 +42,21 @@ class _ServiceLearnState extends State<ServiceLearn> {
       }
       changeLoading();
     }
+  }
 
-    print(response);
+  Future<void> fetchPostModel() async {
+    changeLoading();
+    final response =
+        await Dio().get('https://jsonplaceholder.typicode.com/posts');
+    if (response.statusCode == HttpStatus.ok) {
+      final _datas = response.data;
+      if (_datas is List) {
+        setState(() {
+          _items = _datas.map((e) => PostModel.fromJson(e)).toList();
+        });
+      }
+      changeLoading();
+    }
   }
 
   @override
@@ -48,13 +64,39 @@ class _ServiceLearnState extends State<ServiceLearn> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mansur'),
-        actions: [_isLoading ? const CircularProgressIndicator() : const SizedBox.shrink()],
+        actions: [
+          _isLoading
+              ? const CircularProgressIndicator()
+              : const SizedBox.shrink()
+        ],
       ),
       body: ListView.builder(
-        itemBuilder: (context, index) {
-          return const Text('data');
-        },
         itemCount: _items?.length ?? 0,
+        itemBuilder: (context, index) {
+          return _PostCard(
+            model: _items?[index],
+          );
+        },
+      ),
+    );
+  }
+}
+
+class _PostCard extends StatelessWidget {
+  const _PostCard({
+    Key? key,
+    required PostModel? model,
+  })  : _model = model,
+        super(key: key);
+
+  final PostModel? _model;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        title: Text(_model?.title ?? ''),
+        subtitle: Text(_model?.body ?? ''),
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:day_2/202/service/service_post_learn.dart';
+import 'package:day_2/202/package_view_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -21,6 +21,6 @@ class MyApp extends StatelessWidget {
                 elevation: 0,
                 color: Colors.transparent,
                 systemOverlayStyle: SystemUiOverlayStyle.light)),
-        home: const ServicePostLearn());
+        home: const PackageViewLearn());
   }
 }

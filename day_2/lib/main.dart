@@ -1,6 +1,7 @@
-import 'package:day_2/202/package_view_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '202/animated_learn_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,6 @@ class MyApp extends StatelessWidget {
                 elevation: 0,
                 color: Colors.transparent,
                 systemOverlayStyle: SystemUiOverlayStyle.light)),
-        home: const PackageViewLearn());
+        home: const AnuimatedLearnView());
   }
 }

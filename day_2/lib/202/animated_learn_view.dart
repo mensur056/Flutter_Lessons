@@ -7,8 +7,17 @@ class AnuimatedLearnView extends StatefulWidget {
   State<AnuimatedLearnView> createState() => _AnuimatedLearnViewState();
 }
 
-class _AnuimatedLearnViewState extends State<AnuimatedLearnView> {
+class _AnuimatedLearnViewState extends State<AnuimatedLearnView>
+    with TickerProviderStateMixin {
   bool _isVisible = false;
+  late AnimationController controller;
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+        vsync: this, duration: _DurationItems.myLowDuration);
+  }
+
   void _changeVisible() {
     setState(() {
       _isVisible = !_isVisible;
@@ -20,22 +29,29 @@ class _AnuimatedLearnViewState extends State<AnuimatedLearnView> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: () {
         _changeVisible();
+        controller.animateTo(_isVisible ? 1 : 0);
       }),
       appBar: AppBar(),
-      body: AnimatedCrossFade(
-        crossFadeState:
-            _isVisible ? CrossFadeState.showFirst : CrossFadeState.showSecond,
-        duration: _DurationItems.myLowDuration,
-        firstChild: Container(
-          height: 100,
-          width: 200,
-          color: Colors.amberAccent,
-        ),
-        secondChild: Container(
-          height: 200,
-          width: 100,
-          color: Colors.red,
-        ),
+      body: Column(
+        children: [
+          AnimatedCrossFade(
+            crossFadeState: _isVisible
+                ? CrossFadeState.showFirst
+                : CrossFadeState.showSecond,
+            duration: _DurationItems.myLowDuration,
+            firstChild: Container(
+              height: 100,
+              width: 200,
+              color: Colors.amberAccent,
+            ),
+            secondChild: Container(
+              height: 200,
+              width: 100,
+              color: Colors.red,
+            ),
+          ),
+          AnimatedIcon(icon: AnimatedIcons.add_event, progress: controller)
+        ],
       ),
     );
   }

@@ -16,11 +16,21 @@ class _TextFromLearnState extends State<TextFromLearn> {
       body: Form(
         key: _key,
         child: Column(children: [
-          TextFormField(
-            validator: (value) {
-              return (value?.isNotEmpty ?? false) ? null : 'This form isempty';
-            },
-          ),
+          TextFormField(validator: FormFieldValidator().isNotEmpty),
+          DropdownButtonFormField<String>(items: const [
+            DropdownMenuItem(
+              child: Text('Azerbaijan'),
+              value: '1',
+            ),
+            DropdownMenuItem(
+              child: Text('baku'),
+              value: '2',
+            ),
+            DropdownMenuItem(
+              child: Text('England'),
+              value: '3',
+            ),
+          ], onChanged: (value) {}),
           ElevatedButton(
               onPressed: () {
                 if (_key.currentState?.validate() ?? false) {
@@ -31,5 +41,11 @@ class _TextFromLearnState extends State<TextFromLearn> {
         ]),
       ),
     );
+  }
+}
+
+class FormFieldValidator {
+  String? isNotEmpty(String? data) {
+    return (data?.isNotEmpty ?? false) ? null : 'This is Empty';
   }
 }

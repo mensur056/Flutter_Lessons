@@ -50,7 +50,13 @@ class _AnuimatedLearnViewState extends State<AnuimatedLearnView>
               color: Colors.red,
             ),
           ),
-          AnimatedIcon(icon: AnimatedIcons.add_event, progress: controller)
+          AnimatedIcon(icon: AnimatedIcons.add_event, progress: controller),
+          AnimatedContainer(
+            duration: _DurationItems.myLowDuration,
+            height: _isVisible ? 0 : MediaQuery.of(context).size.width * 0.3,
+            width: MediaQuery.of(context).size.height * 0.3,
+            color: Colors.red,
+          )
         ],
       ),
     );

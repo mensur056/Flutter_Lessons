@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '202/animated_learn_view.dart';
+import '202/text_form_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +22,6 @@ class MyApp extends StatelessWidget {
                 elevation: 0,
                 color: Colors.transparent,
                 systemOverlayStyle: SystemUiOverlayStyle.light)),
-        home: const AnuimatedLearnView());
+        home: const TextFromLearn());
   }
 }

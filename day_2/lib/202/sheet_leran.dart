@@ -17,7 +17,7 @@ class _SheetLearnState extends State<SheetLearn> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.white,
               isScrollControlled: true,
               barrierColor: Colors.transparent,
               elevation: 0,
@@ -31,13 +31,19 @@ class _SheetLearnState extends State<SheetLearn> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      Divider(
+                        color: Colors.grey,
+                        indent: MediaQuery.of(context).size.width * 0.45,
+                        endIndent: MediaQuery.of(context).size.width * 0.45,
+                        thickness: 3,
+                      ),
                       const Text('data'),
                       Image.network('https://picsum.photos/200'),
                       ElevatedButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                             setState(() {
-                              _backgraound = Colors.red;
+                              _backgraound = Colors.white;
                             });
                           },
                           child: const Text('ok'))

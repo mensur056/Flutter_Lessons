@@ -23,7 +23,7 @@ class _TextFromLearnState extends State<TextFromLearn> {
               value: '1',
             ),
             DropdownMenuItem(
-              child: Text('baku'),
+              child: Text('Baku'),
               value: '2',
             ),
             DropdownMenuItem(

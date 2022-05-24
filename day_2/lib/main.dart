@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '202/sheet_leran.dart';
+import '202/alert_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +27,6 @@ class MyApp extends StatelessWidget {
                 elevation: 0,
                 color: Colors.purple,
                 systemOverlayStyle: SystemUiOverlayStyle.light)),
-        home: const SheetLearn());
+        home: const AlertLearn());
   }
 }

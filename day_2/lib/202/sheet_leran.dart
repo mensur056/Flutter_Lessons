@@ -8,7 +8,7 @@ class SheetLearn extends StatefulWidget {
 }
 
 class _SheetLearnState extends State<SheetLearn> {
-  Color _backgraound = Colors.green;
+  Color _backgraound = Colors.teal;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,6 @@ class _SheetLearnState extends State<SheetLearn> {
           showModalBottomSheet(
               backgroundColor: Colors.white,
               isScrollControlled: true,
-              barrierColor: Colors.transparent,
               elevation: 0,
               shape: const RoundedRectangleBorder(
                   borderRadius:

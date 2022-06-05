@@ -1,7 +1,6 @@
+import 'package:day_2/303/call_back_learn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '202/alert_learn.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +26,6 @@ class MyApp extends StatelessWidget {
                 elevation: 0,
                 color: Colors.purple,
                 systemOverlayStyle: SystemUiOverlayStyle.light)),
-        home: const AlertLearn());
+        home: const CallBackLearn());
   }
 }

@@ -10,18 +10,19 @@ class AnswerButton extends StatefulWidget {
 }
 
 class _AnswerButtonState extends State<AnswerButton> {
-  Color? _backColor;
+  Color? _color;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        style: ElevatedButton.styleFrom(primary: _backColor),
+        style: ElevatedButton.styleFrom(primary: _color),
         onPressed: () {
-          final result = Random().nextInt(10);
-          final response = widget.onNumber?.call(result) ?? false;
+          final reslut = Random().nextInt(20);
+          final response = widget.onNumber?.call(reslut) ?? false;
           setState(() {
-            _backColor = response ? Colors.green : Colors.red;
+            _color = response ? Colors.green : Colors.red;
           });
         },
-        child: const Text('hello'));
+        child: const Text('Click'));
   }
 }

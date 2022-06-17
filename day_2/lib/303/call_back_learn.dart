@@ -1,4 +1,5 @@
 import 'package:day_2/product/widget/button/answer_button.dart';
+import 'package:day_2/product/widget/button/loding_button.dart';
 import 'package:day_2/product/widget/callback_dropdown.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +25,11 @@ class _CallBackLearnState extends State<CallBackLearn> {
               return number / 2 == 1;
             },
           ),
+          LoadingButton(
+              title: 'Save',
+              onPressed: () {
+                return Future.delayed(const Duration(seconds: 1));
+              })
         ],
       ),
     );
@@ -46,4 +52,8 @@ class CallBackUser {
 
     return other is CallBackUser && other.name == name && other.id == id;
   }
+
+  @override
+  // TODO: implement hashCode
+  int get hashCode => super.hashCode;
 }

@@ -1,3 +1,5 @@
+import 'package:day_2/product/widget/button/answer_button.dart';
+import 'package:day_2/product/widget/callback_dropdown.dart';
 import 'package:flutter/material.dart';
 
 class CallBackLearn extends StatefulWidget {
@@ -8,28 +10,20 @@ class CallBackLearn extends StatefulWidget {
 }
 
 class _CallBackLearnState extends State<CallBackLearn> {
-  CallBackUser? _users;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(actions: const [Icon(Icons.apple)]),
       body: Column(
         children: [
-          DropdownButton<CallBackUser>(
-              value: _users,
-              items: CallBackUser.dummyUser().map((e) {
-                return DropdownMenuItem(
-                  child: Text(
-                    e.name,
-                  ),
-                  value: e,
-                );
-              }).toList(),
-              onChanged: (CallBackUser? callBackUser) {
-                setState(() {
-                  _users = callBackUser;
-                });
-              })
+          CallBackDropDown(onUserSelected: (CallBackUser user) {
+            print(user);
+          }),
+          AnswerButton(
+            onNumber: (number) {
+              return number / 2 == 1;
+            },
+          ),
         ],
       ),
     );
@@ -52,8 +46,4 @@ class CallBackUser {
 
     return other is CallBackUser && other.name == name && other.id == id;
   }
-
-  @override
-  // TODO: implement hashCode
-  int get hashCode => super.hashCode;
 }

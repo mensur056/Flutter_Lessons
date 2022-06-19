@@ -10,24 +10,22 @@ class LoadingButton extends StatefulWidget {
 }
 
 class _LoadingButtonState extends State<LoadingButton> {
-  bool _isLoading = false;
-
+  bool isLoading = false;
   void changeLoading() {
     setState(() {
-      _isLoading = !_isLoading;
+      isLoading = !isLoading;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () async {
-          changeLoading();
-          await widget.onPressed.call();
-          changeLoading();
-        },
-        child: _isLoading
-            ? const CircularProgressIndicator()
-            : Text(widget.title));
+      onPressed: () async {
+        changeLoading();
+        await widget.onPressed.call();
+        changeLoading();
+      },
+      child: isLoading ? const CircularProgressIndicator() : Text(widget.title),
+    );
   }
 }

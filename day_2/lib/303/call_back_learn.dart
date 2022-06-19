@@ -28,7 +28,7 @@ class _CallBackLearnState extends State<CallBackLearn> {
           LoadingButton(
               title: 'Save',
               onPressed: () {
-                return Future.delayed(const Duration(seconds: 1));
+                return Future.delayed(const Duration(seconds: 2));
               })
         ],
       ),
@@ -52,8 +52,4 @@ class CallBackUser {
 
     return other is CallBackUser && other.name == name && other.id == id;
   }
-
-  @override
-  // TODO: implement hashCode
-  int get hashCode => super.hashCode;
 }

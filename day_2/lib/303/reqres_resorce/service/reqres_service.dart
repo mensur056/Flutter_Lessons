@@ -7,19 +7,19 @@ abstract class IReqresService {
   IReqresService(this.dio);
   final Dio dio;
 
-  Future<List<ResourceModel>?> fetchResourceItems();
+  Future<ResourceModel?> fetchResourceItems();
 }
 
-class ResourceService extends IReqresService {
-  ResourceService(Dio dio) : super(dio);
+class ReqresService extends IReqresService {
+  ReqresService(Dio dio) : super(dio);
 
   @override
-  Future<List<ResourceModel>?> fetchResourceItems() async {
+  Future<ResourceModel?> fetchResourceItems() async {
     final response = await dio.get('https://reqres.in/api/unknown');
     if (response.statusCode == HttpStatus.ok) {
       final jsonBody = response.data;
-      if (jsonBody is List) {
-        return jsonBody.map((json) => ResourceModel.fromJson(json)).toList();
+      if (jsonBody is Map<String, dynamic>) {
+        return ResourceModel.fromJson(jsonBody);
       }
     }
     return null;

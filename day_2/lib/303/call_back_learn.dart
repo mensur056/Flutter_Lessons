@@ -52,4 +52,8 @@ class CallBackUser {
 
     return other is CallBackUser && other.name == name && other.id == id;
   }
+
+  @override
+  // TODO: implement hashCode
+  int get hashCode => super.hashCode;
 }

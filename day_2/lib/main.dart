@@ -1,4 +1,4 @@
-import 'package:day_2/303/mobx_image_picker/view/mobx_image_upload_view.dart';
+import 'package:day_2/303/package/kartal_view.dart';
 import 'package:day_2/product/global/theme_data.dart';
 import 'package:day_2/product/navigator/navigator_custom.dart';
 import 'package:day_2/product/navigator/navigator_manager.dart';
@@ -23,10 +23,10 @@ class MyApp extends StatelessWidget with NavigatorCustom {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Learning',
       theme: ThemeData.light(),
-      //context.watch<ThemeDataNotifer>().currentTheme,
+      //context.watch<ThemeDataNotifer>().currentT heme,
       onGenerateRoute: onGeneratedRoute,
       navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
-      home: const MobxImageUpload(),
+      home: const KartalView(),
     );
   }
 }
